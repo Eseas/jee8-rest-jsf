@@ -1,0 +1,325 @@
+.top-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #FFF;
+    border-bottom: 0;
+    height: 60px;
+    z-index: 10;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 1, 0.2);
+}
+ol{
+    padding: 0;
+}
+.header #logo{
+    position: relative;
+    font-family: 'Josefin Sans', sans-serif !important;
+    margin-top: -10px;
+    margin-bottom: 0;
+    margin-left: 40px;
+    color: #00426B;
+}
+.header #logo, #user{
+    outline: 0;
+    padding: 0;
+    display: inline-block;
+}
+.header #user{
+    float: right;
+    margin-top: 20px;
+    margin-right: 40px;
+    color: #00426B;
+    font-style: italic;
+}
+.header em {
+    letter-spacing: 0.09em;
+}
+#user a{
+    color: #00426B;
+}
+.throwLeft{
+    float: left;
+}
+.glyphicon{
+    margin-right: 10px;
+    top: 3px !important;
+}
+.page_title{
+    position: relative;
+    outline: 0;
+    font-family: 'Josefin Sans', sans-serif !important;
+}
+.page_title h2{
+    margin-top: 0;
+    width: 100%;
+    padding: 100px 0 30px;
+    text-align: center;
+    font-size: 2em;
+    color: #00426B;
+    font-family: 'Bitter', serif;
+}
+/*page top done*/
+
+.management-tabs a {
+    font-family: 'Bitter', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: bold;
+}
+#j_id_e{
+    border: none;
+    padding: 0;
+}
+.ui-tabs.ui-tabs-top>.ui-tabs-nav {
+    background: -webkit-linear-gradient(right, #EEF0F3, #FFFFFF);
+    background: -moz-linear-gradient(right, #EEF0F3, #FFFFFF);
+    background: -o-linear-gradient(right, #EEF0F3, #FFFFFF);
+    background: linear-gradient(to left, #EEF0F3, #FFFFFF);
+    font-family: "Roboto", sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+.ui-widget{
+    font-family: "Roboto", sans-serif;
+}
+table{
+    width: 100%;
+    max-width: 1250px;
+    table-layout: auto !important;
+    margin: 0 auto;
+}
+
+.reg_users{
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+}
+.add_user, .remove_user{
+    float: left;
+    width: 100%;
+}
+.potential_users{
+    float: right;
+    margin: 20px;
+    padding-left: 30px;
+    width: 100%;
+}
+.label_potential p{
+    margin: 20px 20px 0;
+}
+.ui-widget-content .ui-inputfield{
+    margin: 10px 20px 0;
+    width: 90%;
+}
+.ui-button .ui-button-text, .ui-widget button {
+    font-family: "Roboto", sans-serif !important;
+    font-weight: normal;
+}
+#add, #remove{
+    width: 50px;
+}
+.button{
+    margin: 10px 20px 50px;
+    width: 90%;
+}
+/* Clearfix'as */
+
+.potential-wrapper::after {
+    content: '';
+    display: table;
+    clear:both;
+}
+
+.potential-wrapper::before {
+    content: '';
+    display: table;
+    clear:both;
+}
+
+.clearfix::after {
+    content: '';
+    display: table;
+    clear:both;
+}
+
+.clearfix::before {
+    content: '';
+    display: table;
+    clear:both;
+}
+
+/* Elementu padalijimas */
+
+.potential-wrapper .left {
+    float: left;
+    width: 50%;
+}
+
+.potential-wrapper .right {
+    float: right;
+    width: 50%;
+}
+
+@media (max-width: 991px) {
+    .potential-wrapper .left, .potential-wrapper .right {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        float: none;
+
+    }
+}
+/*tabview*/
+.management-tabs, .registered-fieldset{
+    border: none;
+}
+.management-tabs li {
+    border-color: #3dae41 !important;
+    border-radius: 0;
+    background: #e0e0e0;
+    box-shadow: none;
+    text-shadow: none;
+}
+.ui-widget-header .ui-state-default {
+    background: #EFF0F3;
+}
+.registered-table, .potential-table{
+    font-size: 14px !important;
+}
+.registered-table button, .potential-table button{
+    border: none !important;
+    background: transparent !important;
+    font-size: 14px !important;
+    text-decoration: underline !important;
+}
+.ui-button-text-icon-left .ui-icon.fa {
+    display: none;
+}
+label{
+    font-weight: normal !important;
+}
+.add_user{
+    margin-top: 20px;
+}
+.add_user button{
+    margin-right: 0;
+    margin-bottom: 40px;
+    float: right;
+    background: #fff !important;
+    border-color: #3dae41 !important;
+    border-radius: 0;
+    color: #00426B !important;
+    padding: 1px !important;
+}
+.ui-datatable table{
+    table-layout: auto !important;
+    font-family: 'Roboto' ,sans-serif;
+}
+
+/*registered table*/
+.ui-button-text-icon-left .ui-button-text{
+    padding: 0 !important;
+}
+.admin{
+    text-align: center;
+}
+.blocked {
+    text-align: center;
+}
+.edit-col {
+    text-align: center;
+}
+.remove {
+    text-align: center;
+}
+th {
+    font-weight: normal !important;
+    line-height: 2.5em;
+    font-size: 14px;
+    background: #00426B !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    color: #ffffff !important;
+}
+tr {
+    font-weight: normal !important;
+    border-right-color: transparent !important;
+    border-left-color: transparent !important;
+    line-height: 2em;
+    font-size: 14px;
+    background: transparent !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+}
+
+/*edit user*/
+.ui-dialog {
+    max-width: 360px;
+    min-height: 300px;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    background: transparent;
+}
+
+.ui-dialog .ui-dialog-title {
+    margin: 7px 0;
+}
+
+.ui-icon-check {
+    background-position: -65px -146px;
+}
+
+.ui-panelgrid .ui-panelgrid-cell {
+    padding: 0 5px 10px 5px;
+}
+
+.update-button {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    float: right;
+    background: #fff !important;
+    border-color: #3dae41 !important;
+    border-radius: 0;
+    color: #00426B !important;
+    padding: 1px !important;
+}
+
+.user-detail label {
+    font-size: 14px !important;
+}
+
+.ui-chkbox .ui-chkbox-box {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    box-shadow: none !important;
+    background: transparent;
+    border-radius: 0 !important;
+    border-color: #909090;
+    vertical-align: middle;
+}
+/* page bottom done*/
+footer{
+    display: block;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    font-size: 9px;
+    z-index: -999;
+}
+body{
+    background: -webkit-linear-gradient(right, #EEF0F3, #FFFFFF);
+    background: -moz-linear-gradient(right, #EEF0F3, #FFFFFF);
+    background: -o-linear-gradient(right, #EEF0F3, #FFFFFF);
+    background: linear-gradient(to left, #EEF0F3, #FFFFFF);
+    font-family: "Roboto", sans-serif !important;
+    font-weight: normal !important;
+    -webkit-font-smoothing: antialiased;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core"
+>
+<h:head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'/>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet"/>
+    <h:outputStylesheet name="css/stylesUsers.css" />
+    <title>Builder of Surveys</title>
+</h:head>
+
+<h:body class="vehicles">
+
+    <ui:include src="/WEB-INF/composites/header.xhtml"/>
+
+    <div class="page_title">
+        <h2>Vehicle Management</h2>
+    </div>
+
+    <h:form id="form" class="reg_users">
+        <p:growl id="msgs" showDetail="true"/>
+
+        <p:dataTable id="vehicles1" var="vehicle" value="#{vehicleManagementController.vehicles}" editable="true">
+
+            <p:ajax event="rowEdit" listener="#{vehicleManagementController.updateVehicle(vehicle)}" update=":form:msgs" />
+
+            <p:column headerText="licence">
+                <p:cellEditor>
+                    <f:facet name="output"><h:outputText value="#{vehicle.licence}" /></f:facet>
+                    <f:facet name="input"><p:inputText value="#{vehicle.licence}" style="width:100%"/></f:facet>
+                </p:cellEditor>
+            </p:column>
+
+            <p:column headerText="make">
+                <p:cellEditor>
+                    <f:facet name="output"><h:outputText value="#{vehicle.make}" /></f:facet>
+                    <f:facet name="input"><p:inputText value="#{vehicle.make}" style="width:100%"/></f:facet>
+                </p:cellEditor>
+            </p:column>
+
+            <p:column headerText="model">
+                <p:cellEditor>
+                    <f:facet name="output"><h:outputText value="#{vehicle.model}" /></f:facet>
+                    <f:facet name="input"><p:inputText value="#{vehicle.model}" style="width:100%"/></f:facet>
+                </p:cellEditor>
+            </p:column>
+
+            <p:column headerText="power">
+                <p:cellEditor>
+                    <f:facet name="output"><h:outputText value="#{vehicle.power}" /></f:facet>
+                    <f:facet name="input"><p:inputText value="#{vehicle.power}" style="width:100%"/></f:facet>
+                </p:cellEditor>
+            </p:column>
+
+            <p:column style="width:32px">
+                <p:rowEditor />
+            </p:column>
+
+            <p:column>
+                <p:commandButton value="DELETE"
+                                 actionListener="#{vehicleManagementController.deleteVehicle(vehicle)}"
+                                 update=":form:vehicles1"
+                                 style="width:100px"/>
+            </p:column>
+        </p:dataTable>
+    </h:form>
+
+
+
+
+
+
+
+
+
+
+    <h:form id="add_user_form" class="add_user">
+        <p:messages showDetail="true" autoUpdate="true" closable="true"/>
+        <p:outputLabel for="licence" value="Add vehicle"
+                       style="margin-left: 20px;"/>
+        <p:inputText id="licence"
+                     value="#{vehicleManagementController.vehicle.licence}" placeholder="licence"
+                     style="border-radius: 0; box-shadow: none;"/>
+        <p:inputText id="make"
+                     value="#{vehicleManagementController.vehicle.make}" placeholder="make"
+                     style="border-radius: 0; box-shadow: none;"/>
+        <p:inputText id="model"
+                     value="#{vehicleManagementController.vehicle.model}" placeholder="model"
+                     style="border-radius: 0; box-shadow: none;"/>
+        <p:inputText id="power"
+                     value="#{vehicleManagementController.vehicle.power}" placeholder="power"
+                     style="border-radius: 0; box-shadow: none;"/>
+        <p:message for="licence"/>
+        <div class="button">
+            <p:commandButton value="Add" actionListener="#{vehicleManagementController.createVehicle()}"
+                             update=":form"
+            />
+        </div>
+    </h:form>
+    <ui:include src="/WEB-INF/composites/footer.xhtml"/>
+</h:body>
+</html>
