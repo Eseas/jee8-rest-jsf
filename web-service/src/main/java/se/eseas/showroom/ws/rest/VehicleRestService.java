@@ -32,9 +32,9 @@ public class VehicleRestService {
     }
 
     @GET
-    @Path("/vehicles/{vehicleId}")
-    public Vehicle find(@PathParam("vehicleId") Integer vehicleId) {
-        return em.find(Vehicle.class, vehicleId);
+    @Path("/vehicles/{id}")
+    public Vehicle getVehicleById(@PathParam("id") Integer id) {
+        return vehicleDAO.getById(id);
     }
 
     @POST
@@ -49,9 +49,7 @@ public class VehicleRestService {
     @Path("/vehicles/{id}")
     @Transactional(Transactional.TxType.REQUIRED)
     public Vehicle replaceVehicle(@PathParam("id") int id, Vehicle vehicle) {
-        vehicle.setId(id);
-        em.merge(vehicle);
-        em.flush();
+        vehicleDAO.update(vehicle);
         return vehicle;
     }
 
@@ -59,12 +57,8 @@ public class VehicleRestService {
     @Path("/vehicles/{id}")
     @Transactional(Transactional.TxType.REQUIRED)
     public Response deleteVehicle(@PathParam("id") int id) {
-        Vehicle vehicle = em.createNamedQuery("Vehicle.findById", Vehicle.class)
-                .setParameter("id", id).getSingleResult();
-        em.remove(vehicle);
-        em.flush();
+        vehicleDAO.delete(id);
         return Response.status(200).build();
-
     }
 
 }

@@ -58,7 +58,7 @@ public class VehicleManagementController implements Serializable {
         } else {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Invalid vehicle make."));
         }
-
+        vehicle = new Vehicle();
         loadData();
     }
 

@@ -17,7 +17,9 @@ public class VehicleDAO {
         em.persist(vehicle);
     }
 
-    public void delete(Vehicle vehicle) {
+    public void delete(Integer id) {
+        Vehicle vehicle = em.createNamedQuery("Vehicle.findById", Vehicle.class)
+                .setParameter("id", id).getSingleResult();
         em.remove(vehicle);
     }
 
@@ -25,10 +27,13 @@ public class VehicleDAO {
         return em.createNamedQuery("Vehicle.findAll", Vehicle.class).getResultList();
     }
 
-    public Vehicle selectByLicence(String licence) {
-        return em.createNamedQuery("Vehicle.findByLicence", Vehicle.class)
-                .setParameter("licence", licence.toLowerCase()).getSingleResult();
+    public Vehicle getById(Integer id) {
+        return em.find(Vehicle.class, id);
     }
 
-
+    public Vehicle update(Vehicle vehicle) {
+        em.merge(vehicle);
+        em.flush();
+        return vehicle;
+    }
 }
